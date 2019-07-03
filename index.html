@@ -387,9 +387,21 @@ blockquote {
 <body>
 <h1 id="tianfayao">TianfaYao</h1>
 <h2 id="stereo-visual-simultaneous-localization-and-mapping">Stereo Visual Simultaneous Localization and Mapping</h2>
+<ul>
+<li>采用<a href="https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets">Euroc</a>数据集作为算法验证</li>
+<li>前端设计采用光流跟踪</li>
+<li>后端采用Sliding window,优化器采用g2o</li>
+</ul>
 <p><img src="image/without_loop_close.gif" alt="image"></p>
-<p><a href="">video1</a>  <a href="">video2</a></p>
+<h3 id="%E5%9C%A8%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8A%E6%9B%B4%E5%A4%9A%E6%B5%8B%E8%AF%95%E8%A7%86%E9%A2%91">在数据集上更多测试视频</h3>
+<p><a href="https://www.bilibili.com/video/av57411730">video1</a>
+<a href="https://www.bilibili.com/video/av57410811">video2</a></p>
 <h2 id="stereo-vins-on-wheel">stereo vins on wheel</h2>
+<ul>
+<li>在上述算法验证完成的基础上采用<a href="http://www.myntai.com/product/customize">小觅</a>双目相机作为基础硬件，搭载在AGV小车上;</li>
+<li>为了得到更好的精度和鲁棒的面对室内环境采用紧耦合的方式融合了轮速计和imu(z)，完成传感器内外参标定，融合因子图建立，以及数学模型推导验证。</li>
+<li>在后端加入DBow进行回环检测,如果检测到回环进行pose-graph优化，加入DBow检测后也完成了重定位，以及地图保存后加载进行纯定位模式。</li>
+</ul>
 <p><img src="image/stereo_odom_add_plant_small_dataset.gif" alt="image"></p>
 
 </body>
